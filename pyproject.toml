@@ -3,6 +3,13 @@ name = "quelfilm-chatbot-app"
 version = "0.1.0"
 description = "webapp for choose a movie"
 authors = ["thomas.marquis.dev <thomas.marquis.dev@gmail.com>"]
+include = ["templates/*.html", "resources/training.md"]
+packages = [
+    {include = "quelfilm"}
+]
+
+[tool.poetry.scripts]
+start = 'quelfilm.app:start'
 
 [tool.poetry.dependencies]
 python = "^3.7"

@@ -1,3 +1,4 @@
+import os
 from nlp_tools.preprocessing import Preprocessing
 from nlp_tools.loaders import MdLoader
 from nlp_tools.representations import MergedMatrixRepresentation
@@ -8,7 +9,7 @@ from quelfilm.settings import *
 
 
 def build_classifier():
-    loader = MdLoader(TRAINING_PATH)
+    loader = MdLoader(os.path.join('', TRAINING_PATH))
     processor = Preprocessing(loader)
     repres = MergedMatrixRepresentation(processor.data)
     classifier = ClassificationProcessor(NaiveBayseTfIdfClassifier(), repres.data)

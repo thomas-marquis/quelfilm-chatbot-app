@@ -1,9 +1,10 @@
 from flask import Flask, request, render_template
 
 from quelfilm.engine import Classifier
+from quelfilm.settings import *
 
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder=TEMPLATES_DIR)
 classifier = Classifier()
 
 
