@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quelfilm-chatbot-app"
-version = "0.1.0"
+version = "1.0.0"
 description = "webapp for choose a movie"
 authors = ["thomas.marquis.dev <thomas.marquis.dev@gmail.com>"]
 include = ["templates/*.html", "resources/training.md"]
