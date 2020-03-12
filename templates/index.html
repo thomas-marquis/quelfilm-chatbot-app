@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Quelfilm</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div>
+    <input type="text" id="input">
+    <button id="send">Send</button>
+    <div><p id="response"></p></div>
+</div>
+
+<script>
+    $(document).ready(() => {
+        $('#send').on('click', event => {
+            event.preventDefault()
+            text = $('#input')[0].value
+            $.ajax({
+                url: '/predict?text=' + text
+            }).then(({response, intent, score}) => {
+                console.log(intent, score);
+                $('#response')[0].innerText = response
+            })
+        })
+    })
+</script>
+</body>
+</html>
