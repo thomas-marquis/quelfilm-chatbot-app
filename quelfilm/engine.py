@@ -9,7 +9,7 @@ from quelfilm.settings import *
 
 
 def build_classifier():
-    loader = MdLoader(os.path.join('', TRAINING_PATH))
+    loader = MdLoader(TRAINING_PATH)
     processor = Preprocessing(loader)
     repres = MergedMatrixRepresentation(processor.data)
     classifier = ClassificationProcessor(NaiveBayseTfIdfClassifier(), repres.data)

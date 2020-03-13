@@ -30,7 +30,7 @@
     $(document).ready(() => {
         function handleSubmit(event) {
             event.preventDefault()
-            text = $('#input')[0].value
+            const text = $('#input')[0].value
             $.ajax({
                 url: '/predict?text=' + text
             }).then(({response, intent, score}) => {
